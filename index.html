@@ -261,6 +261,43 @@
             background: var(--primary-color);
             border-radius: 2px;
         }
+.project-card-container {
+    position: relative;
+}
+
+.project-card {
+    position: relative;
+    cursor: pointer;
+}
+
+.hover-modal {
+    display: none;
+    position: absolute;
+    top: 100%; left: 0;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    z-index: 10;
+}
+
+.project-card:hover .hover-modal {
+    display: block;
+}
+
+.modal-images {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.modal-images img {
+    width: 100px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 6px;
+}
 
         /* About Section */
         .about-content {
@@ -351,6 +388,102 @@
             font-size: 1.5rem;
             color: var(--primary-color);
         }
+        .modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0; top: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    background: #ffffff;
+    color: #333;
+    margin: 5% auto;
+    padding: 30px;
+    width: 90%;
+    max-width: 900px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    position: relative;
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    color: #666;
+    cursor: pointer;
+}
+
+@media (min-width: 1024px) {
+  .modal-images {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .modal-screenshot {
+    width: 48%;
+    height: 80vh;
+  }
+}
+
+
+
+
+.modal-details h3 {
+    color: #2c3e50;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.modal-details ul {
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+.modal-details ul li {
+    margin-bottom: 6px;
+    line-height: 1.5;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 60px;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: auto;
+    padding: 20px;
+    width: 90%;
+    max-width: 700px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 10px; right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+}
+
+
 
         .company-info h3 {
             font-size: 1.3rem;
@@ -587,6 +720,117 @@
     </nav>
 
     <main>
+        <!-- Popup Modal -->
+<div id="driftModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('driftModal')">&times;</span>
+        <h2>Homedics Drift (Wi-Fi)</h2>
+
+        <!-- Screenshots -->
+        <div class="modal-images">
+            <img src="d0.png" alt="App Screenshot 1" class="modal-screenshot" />
+            <img src="d1.png" alt="App Screenshot 2" class="modal-screenshot" />
+             <img src="d2.png" alt="App Screenshot 1" class="modal-screenshot" />
+            <img src="d3.png" alt="App Screenshot 2" class="modal-screenshot" />
+             <img src="d4.png" alt="App Screenshot 1" class="modal-screenshot" />
+            <img src="d5.png" alt="App Screenshot 2" class="modal-screenshot" />
+            <img src="d6.png" alt="App Screenshot 2" class="modal-screenshot" />
+        </div>
+
+        <!-- Details Section -->
+        <div class="modal-details">
+            <h3>Project Overview</h3>
+            <p>Designed a wellness-focused iOS app for Homedics Drift smart sand tables, allowing remote control and personalization via Wi-Fi connectivity.</p>
+
+            <h3>Key Features</h3>
+            <ul>
+                <li>Remote control of sand patterns and lighting via Wi-Fi</li>
+                <li>RGBIC lighting with thousands of color combinations</li>
+                <li>Built-in focus & nature soundscapes</li>
+                <li>Curated and user-defined pattern playlists</li>
+            </ul>
+
+            <h3>Technical Details</h3>
+            <ul>
+                <li>Built with Swift, SwiftUI, Combine</li>
+                <li>Architecture: MVVM</li>
+                <li>Wi-Fi & BLE support using Network and CoreBluetooth</li>
+                <li>Dynamic OTA updates for patterns and audio content</li>
+            </ul>
+
+            <h3>Achievements</h3>
+            <ul>
+                <li>4.5+ App Store rating</li>
+                <li>Enabled seamless user experience with real-time control</li>
+                <li>Contributed to successful product launch of ST-250/200 models</li>
+                <li>Delivered scalable, modular code for future expansion</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<div id="marley" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('marley')">&times;</span>
+        <h2>House of Marley iOS App</h2>
+
+        <!-- Screenshots -->
+        <div class="modal-images">
+            <img src="m1.png" alt="Screenshot 2" class="modal-screenshot" />
+            <img src="m2.png" alt="Screenshot 3" class="modal-screenshot" />
+            <img src="m3.png" alt="Screenshot 4" class="modal-screenshot" />
+             <img src="m4.png" alt="Screenshot 4" class="modal-screenshot" />
+              <img src="m5.png" alt="Screenshot 4" class="modal-screenshot" />
+             
+        </div>
+
+        <!-- Project Details -->
+        <div class="modal-details">
+            <h3>Project Overview</h3>
+            <p>Developed the official House of Marley iOS app to support advanced control and customization for multiple wireless earbuds and solar-powered audio devices. The app enhances the user’s listening experience with real-time settings, firmware updates, and EQ tuning.</p>
+
+            <h3>Key Features</h3>
+            <ul>
+                <li>Custom EQ profiles + user-created EQ via visual equalizer</li>
+                <li>Switch between ANC and Ambient modes (device-specific)</li>
+                <li>Customizable touch/button controls per device</li>
+                <li>Real-time firmware updates via OTA</li>
+                <li>Access to user guides, FAQs, and support</li>
+                <li>Support for future Marley devices</li>
+            </ul>
+
+            <h3>Supported Devices</h3>
+            <ul>
+                <li>Redemption ANC 2</li>
+                <li>Champion 2</li>
+                <li>Root</li>
+                <li>Root Solar</li>
+                <li>Rise</li>
+                <li>Rise Up Solar</li>
+            </ul>
+
+            <h3>Technical Details</h3>
+            <ul>
+                <li>Language: Swift, SwiftUI</li>
+                <li>Architecture: MVVM-C (modular and scalable)</li>
+                <li>BLE (CoreBluetooth) for device pairing and control</li>
+                <li>OTA firmware updates per SKU using encrypted bundles</li>
+                <li>Dynamic product configuration and runtime feature mapping</li>
+            </ul>
+
+            <h3>Achievements</h3>
+            <ul>
+                <li>Unified control for 6+ diverse devices in a single app</li>
+                <li>Successfully supported solar-powered speakers</li>
+                <li>Robust OTA system across devices with minimal user friction</li>
+                <li>Positive user reviews and improved brand experience</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
         <section id="home" class="hero">
             <div class="hero-content">
                 <h1>Lead iOS Engineer</h1>
@@ -611,8 +855,14 @@
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=250&h=250&fit=crop&crop=face" alt="Tanay Bhattacharjee" class="profile-pic">
+                  
+                    <!-- <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=250&h=250&fit=crop&crop=face" alt="Tanay Bhattacharjee" class="profile-pic"> -->
+                                    <img src="https://utahtechlabs.keka.com/files/0bc7323c-b297-4083-8aff-55e2d4600cec/200x200/profileimage/e30697d575a44d53829f5420424ef7fe.jpeg" alt="Tanay Bhattacharjee" class="profile-pic">
+
+                
                 </div>
+
+
                 <div class="about-text">
                     <p>
                         I have eight years of professional experience in developing iOS applications. I have taken part in full-cycle development of more than 20 projects for US and European companies.
@@ -631,16 +881,7 @@
                         <span class="skill-tag">IoT</span>
                         <span class="skill-tag">MQTT</span>
                         <span class="skill-tag">Bluetooth</span>
-                         <span class="skill-tag">Swift</span>
-                        <span class="skill-tag">SwiftUI</span>
-                        <span class="skill-tag">Objective-C</span>
-                        <span class="skill-tag">Core Data</span>
-                        <span class="skill-tag">iOS SDK</span>
-                        <span class="skill-tag">watchOS</span>
-                        <span class="skill-tag">macOS</span>
-                        <span class="skill-tag">IoT</span>
-                        <span class="skill-tag">MQTT</span>
-                        <span class="skill-tag">Bluetooth</span>
+                        
                     </div>
                 </div>
             </div>
@@ -695,7 +936,70 @@
         <section id="projects">
             <h2 class="section-title">Featured Projects</h2>
             <div class="projects-grid">
-                <div class="project-card">
+                <div class="project-card" onclick="openModal('driftModal')">
+    <div class="project-image">
+        <i class="fab fa-apple"></i>
+    </div>
+    <div class="project-content">
+        <h3 class="project-title">Homedics Drift (Wi-Fi) iOS App</h3>
+        <p class="project-description">
+            Companion app for the ST-250/ST-200 smart sand table. Enables remote Wi-Fi control, RGBIC lighting, curated sand patterns, and immersive ambient audio. Built using modern Swift and MVVM architecture.
+        </p>
+        
+       
+
+        <div class="tech-stack">
+            <span class="tech-tag">Swift</span>
+            <span class="tech-tag">SwiftUI</span>
+            <span class="tech-tag">Combine</span>
+            <span class="tech-tag">BLE</span>
+            <span class="tech-tag">MVVM</span>
+             <span class="tech-tag">MQTT</span>
+        </div>
+
+        <div class="project-links">
+            <a href="https://apps.apple.com/in/app/homedics-drift-wi-fi/id6468965668" class="project-link" target="_blank">
+                <i class="fas fa-external-link-alt"></i>
+                App Store
+            </a>
+             <a href="#" class="project-link" onclick="closeModal('driftModal')">
+    <i class="fa-solid fa-file"></i>
+    Clickon
+</a>
+
+        </div>
+    </div>
+</div>
+
+
+                 <div class="project-card" onclick="openModal('marley')">
+                    <div class="project-image">
+                        <i class="fab fa-apple"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">House Of Marley iOS App</h3>
+                        <p class="project-description">
+Designed and developed the House of Marley iOS companion app supporting multiple audio devices, including earbuds and solar-powered speakers. The app enables real-time customization of sound, firmware upgrades, and device settings across a range of products, enhancing the overall listening experience.                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Swift</span>
+                            <span class="tech-tag">SwiftUI</span>
+                            <span class="tech-tag">Core Data</span>
+                            <span class="tech-tag">HealthKit</span>
+                            <span class="tech-tag">CloudKit</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://apps.apple.com/in/app/house-of-marley/id1603515694" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                App Store
+                            </a>
+                           <a href="#" class="project-link" onclick="closeModal('marley')">
+    <i class="fa-solid fa-file"></i>
+    Clickon
+</a>
+                        </div>
+                    </div>
+                </div>
+                 <div class="project-card">
                     <div class="project-image">
                         <i class="fab fa-apple"></i>
                     </div>
@@ -889,6 +1193,13 @@
         const typeSpeed = 100;
         const deleteSpeed = 50;
         const pauseDelay = 2000;
+function openModal(id) {
+    document.getElementById(id).style.display = "block";
+}
+
+function closeModal(id) {
+    document.getElementById(id).style.display = "none";
+}
 
         function typeWriter() {
             // const heroTitle = document.querySelector('.hero h1');
