@@ -881,17 +881,20 @@
         const pauseDelay = 2000;
 
         function typeWriter() {
-            const heroTitle = document.querySelector('.hero h1');
-            const currentText = texts[textIndex];
+            // const heroTitle = document.querySelector('.hero h1');
+            // const currentText = texts[textIndex];
             
-            if (isDeleting) {
-                heroTitle.textContent = currentText.substring(0, charIndex - 1);
-                charIndex--;
-            } else {
-                heroTitle.textContent = currentText.substring(0, charIndex + 1);
-                charIndex++;
-            }
+            // if (isDeleting) {
+            //     heroTitle.textContent = currentText.substring(0, charIndex - 1);
+            //     charIndex--;
+            // } else {
+            //     heroTitle.textContent = currentText.substring(0, charIndex + 1);
+            //     charIndex++;
+            // }
 
-            let delay = isDeleting ? deleteSpeed : typeSpeed;
+            // let delay = isDeleting ? deleteSpeed : typeSpeed;
 
-            if (!isDeleting && charIndex === current
+            // if (!isDeleting && charIndex === current)
+        }
+
+        </script>
